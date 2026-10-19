@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}Minha estante virtual{% endblock %}
+
+{% block content %}
+<div class="info-container">
+    <img src="{{ book.image_url }}" alt="Poster for {{ book.title }}" />
+    <div class="book-info">
+        <h2>{{ book.title }}</h2>
+        <p><b>Data de leitura:</b> {{ book.date }}</p>
+        <div class="rating-container">
+            <p>{{ book.stars }}/5</p>
+            <div class="rating">
+                {% for i in range(book.stars | int) %}
+                    <span>★</span>
+                {% endfor %}
+            </div>
+        </div>
+        <p>{{ book.review }}</p>
+        <a id="returnButton" href="{{ url_for('index') }}">Voltar</a>
+    </div>
+</div>
+</main>
+{% endblock %}
