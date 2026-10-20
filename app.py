@@ -36,11 +36,11 @@ def book_details(book_id):
     else:
         return "Book not found!", 404
 
-@app.get("/add-book")
+@app.get("/add")
 def show_add_form():
     return render_template("add-book.html")
 
-@app.post("/add-book")
+@app.post("/add")
 def add_book():
     with open(CSV_FILE, mode="r", encoding="utf-8") as csv_file:
         reader = list(csv.reader(csv_file))
