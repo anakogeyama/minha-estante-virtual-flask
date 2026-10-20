@@ -1,41 +1,90 @@
+:root {
+    --background-color: #d4f1f8;
+    --text-color: #124d5d;
+    --card-background-color: white;
+    --header-background-color: white;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --input-color: white;
+}
+
+body.dark-mode {
+    --background-color: #102a33;
+    --text-color: #e0f7fa;
+    --card-background-color: #1b3b45;
+    --header-background-color: #1b3b45;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --input-color: #102a33;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: background-color 0.3s, color 0.3s;
 }
-a{
+
+a {
     text-decoration: none;
 }
-header{
-    background-color: white;
+
+header {
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--header-background-color);
 }
-header h1{
-    font-family:cursive;
+
+header h1 {
+    font-family: cursive;
     font-size: 30px;
     color: #4c99af;
 }
-header a{
+
+header a {
     display: flex;
     align-items: center;
 }
+
 header a h1 {
     transition: color 0.3s ease;
 }
+
 header a:hover h1 {
     color: #387f93;
-    cursor: pointer;    
+    cursor: pointer;
 }
-#addButton{
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#theme-toggle-button {
+    font-size: 20px;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#theme-toggle-button:hover {
+    transform: scale(1.05);
+}
+
+#addButton {
     font-size: 35px;
     color: white;
     background-color: #4c99af;
@@ -45,14 +94,16 @@ header a:hover h1 {
     display: flex;
     justify-content: center;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px var(--shadow-color);
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 #addButton:hover {
     background-color: #387f93;
     transform: scale(1.05);
 }
+
 #addButton a,
 #addButton a:visited,
 #addButton a:hover,
@@ -60,6 +111,7 @@ header a:hover h1 {
     color: white;
     text-decoration: none;
 }
+
 #addButton a {
     color: white;
     text-decoration: none;
@@ -69,43 +121,46 @@ header a:hover h1 {
     width: 100%;
     height: 100%;
 }
+
 #addButton a:visited,
 #addButton a:hover,
 #addButton a:active {
     color: white;
     cursor: pointer;
 }
-main{
+
+main {
     padding: 20px;
-    background-color: #d4f1f8;
     flex: 1;
+    background-color: var(--background-color);
 }
-.cards-container{
+
+.cards-container {
     margin: 10px 30px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 30px;
-
 }
+
 .card {
-    background-color: white;
+    color: var(--text-color);
     padding: 10px;
     border-radius: 10px;
     width: 180px;
     min-height: 280px;
     height: auto;
     text-align: center;
-    color: #124d5d;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px var(--shadow-color);
     border: 1px solid #ccc;
-
+    background-color: var(--card-background-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
 }
-.card:hover{
+
+.card:hover {
     transform: scale(1.03);
     transition: transform 0.3s ease;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
@@ -131,34 +186,39 @@ main{
     flex-shrink: 0;
 }
 
-.info-container{
-    background-color: white;
+.info-container {
+    background-color: var(--card-background-color);
     padding: 20px;
     margin: 0px 40px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px var(--shadow-color);
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
-.info-container img{
+
+.info-container img {
     width: 200px;
     height: 300px;
     object-fit: cover;
     border-radius: 6px;
 }
-.book-info{
-    color: #124d5d;
+
+.book-info {
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.rating-container{
+
+
+.rating-container {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-#returnButton{
+
+#returnButton {
     font-size: 15px;
     color: white;
     background-color: #4c99af;
@@ -170,38 +230,47 @@ main{
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-#returnButton:hover{
+
+#returnButton:hover {
     background-color: #387f93;
 }
-.form-container{
+
+.form-container {
     margin: 0px 40px;
-    background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     gap: 10px;
     text-align: center;
-    color: #124d5d;
+    background-color: var(--card-background-color);
+    color: var(--text-color);
+    box-shadow: 0 0 10px var(--shadow-color);
 }
-#addBookForm{
+
+#addBookForm {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.form-group{
+
+.form-group {
     display: flex;
     flex-direction: column;
     gap: 5px;
     text-align: left;
 }
-input, textarea, select{
+
+input,
+textarea,
+select {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     width: 100%;
+    background-color: var(--input-color);
 }
+
 .form-container button {
     text-decoration: none;
     font-size: 15px;
@@ -221,7 +290,8 @@ input, textarea, select{
 .form-container button:hover {
     background-color: #387f93;
 }
-footer{
+
+footer {
     background-color: #4c99af;
     color: white;
     text-align: center;
@@ -304,6 +374,7 @@ footer{
     .card:hover {
         transform: none;
     }
+
     header a h1,
     #addButton {
         transition: none;
