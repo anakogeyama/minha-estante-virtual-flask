@@ -3,6 +3,9 @@
 {% block title %}Minha estante virtual{% endblock %}
 
 {% block content %}
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Seach for title...">
+</div>
 <div class="cards-container">
 
     {% for book in books %}
@@ -14,7 +17,7 @@
 
             <div class="rating">
                 {% for i in range(book.stars | int) %}
-                    <span>★</span>
+                <span>★</span>
                 {% endfor %}
             </div>
         </div>

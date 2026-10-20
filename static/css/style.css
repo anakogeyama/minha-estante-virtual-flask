@@ -135,10 +135,34 @@ main {
     background-color: var(--background-color);
 }
 
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#search-input {
+    width: 50%;
+    max-width: 400px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color, #ccc);
+    background-color: var(--card-background-color, #fff);
+    color: var(--text-color, #000);
+    transition: all 0.3s;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: var(--button-background-color, #23abef);
+    box-shadow: 0 0 5px var(--shadow-color, rgba(0, 0, 0, 0.2));
+}
+
 .cards-container {
     margin: 10px 30px;
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
     flex-wrap: wrap;
     gap: 30px;
 }
@@ -159,13 +183,11 @@ main {
     align-items: center;
     gap: 8px;
 }
-
 .card:hover {
     transform: scale(1.03);
     transition: transform 0.3s ease;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
-
 .card img {
     width: 95%;
     height: 180px;
