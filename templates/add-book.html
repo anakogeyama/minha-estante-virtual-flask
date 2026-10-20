@@ -5,7 +5,7 @@
 {% block content %}
 <div class="form-container">
     <h2>Adicionar livro</h2>
-    <form id="addBookForm" action="{{ url_for('show_add_form') }}" method="POST">
+    <form id="addBookForm" action="{{ url_for('add_book') }}" method="POST">
         <div class="form-group">
             <label for="title">Título:</label>
             <input type="text" id="title" name="title" required>

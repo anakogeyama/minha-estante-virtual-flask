@@ -36,11 +36,12 @@ def book_details(book_id):
     else:
         return "Book not found!", 404
 
-@app.route("/add-book", methods=["GET", "POST"])
+@app.get("/add-book")
 def show_add_form():
-    if request.method == "GET":
-        return render_template("add-book.html")
+    return render_template("add-book.html")
 
+@app.post("/add-book")
+def add_book():
     with open(CSV_FILE, mode="r", encoding="utf-8") as csv_file:
         reader = list(csv.reader(csv_file))
         last_id = 0
@@ -60,6 +61,8 @@ def show_add_form():
     new_book_data = [
         next_id,
         request.form.get("title"),
+        request.form.get("author"),
+        request.form.get("genre"),
         request.form.get("image_url"),
         request.form.get("stars"),
         formatted_date,
