@@ -28,3 +28,40 @@ Preencher o formulário: informe os dados do livro e envie o formulário pelo bo
 **Voltar à página inicial**: utilize o botão "Voltar", localizado na parte inferior da página de detalhes.
 **Pesquisar livros**: utilize a barra de pesquisa na página inicial para encontrar livros pelo título.
 **Alternar o tema**: clique no botão localizado ao lado do botão "+" para alternar entre os temas claro e escuro.
+
+## Como executar o projeto
+### Pré-requisitos
+
+Antes de começar, você precisa ter instalado:
+
+**Python**
+Git (opcional, para clonar o repositório)
+1. Clone o repositório
+Se você já baixou o projeto, basta abrir a pasta no VS Code.
+
+2. Crie um ambiente virtual
+No terminal integrado do VS Code, execute:
+
+**Windows**:
+python -m venv venv
+venv\Scripts\activate
+
+**Linux/macOS**:
+python3 -m venv venv
+source venv/bin/activate
+
+3. Instale as dependências
+Com o ambiente virtual ativado, instale o Flask:
+pip install Flask
+
+4. Execute a aplicação
+No terminal, dentro da pasta do projeto, execute:
+python app.py
+
+5. Acesse a aplicação
+Após iniciar o servidor Flask, abra o navegador e acesse:
+http://127.0.0.1:5000
+
+A aplicação estará disponível enquanto o servidor estiver em execução no terminal.
+
+Para encerrar o servidor, pressione Ctrl + C no terminal.
