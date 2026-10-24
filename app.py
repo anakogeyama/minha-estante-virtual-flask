@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 BASE_DIR = Path(__file__).resolve().parent
 CSV_FILE = BASE_DIR / "books.csv"
-
+ 
 @app.get("/")
 def index():
     books = []
